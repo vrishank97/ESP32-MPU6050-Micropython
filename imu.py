@@ -83,7 +83,7 @@ def read_mpu6050():
     sta_if = network.WLAN(network.STA_IF)
     print('connecting to wifi')
     sta_if.active(True)
-    sta_if.connect(' C4 B-81', '9650495764')
+    sta_if.connect('WIFI_SSID', 'PASSWORD')
     print('network config ....', sta_if.ifconfig())
 
     while not sta_if.isconnected():
@@ -102,7 +102,7 @@ def read_mpu6050():
     try:
         while True:
             if not sta_if.isconnected():
-                sta_if.connect(' C4 B-81', '9650495764')
+                sta_if.connect('WIFI_SSID', 'PASSWORD')
 
                 while not sta_if.isconnected():
                     p0.value(0)
